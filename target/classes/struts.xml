@@ -1,0 +1,90 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: cyclingbd007 -->
+ 
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.action.extension" value="html" />
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+    
+    <!-- Configure the default package -->
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="index" class="com.dane.controller.HomeController">
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        <!-- Start Item -->
+        <action name="item_list" method="listItem" class="com.dane.controller.ItemController">
+            <result name="success">/item_list.jsp</result>
+        </action>
+        <action name="insertItem" method="insertItem" class="com.dane.controller.ItemController">
+            <result name="success">/item_insert.jsp</result>
+            <result name="input">/item_insert.jsp</result>
+        </action>
+        <action name="updateItem" method="updateItem" class="com.dane.controller.ItemController">
+            <result name="success">/item_edit.jsp</result>
+            <result name="input">/item_edit.jsp</result>
+        </action>
+        <action name="item_insert">
+            <result name="success">/item_insert.jsp</result>
+        </action>
+        <action name="item_edit" class="com.dane.controller.ItemController" method="editItem">
+            <result name="success">/item_edit.jsp</result>
+        </action>
+        <action name="item_delete" class="com.dane.controller.ItemController" method="deleteItem">
+            <result name="success">/item_list.jsp</result>
+            <result name="input">/item_list.jsp</result>
+        </action>
+        <!-- End Item -->
+        
+        <!-- Start Inventory -->
+        <action name="inventory_list" method="listInventory" class="com.dane.controller.InventoryController">
+            <result name="success">/inventory_list.jsp</result>
+        </action>
+        <action name="insertInventory" method="insertInventory" class="com.dane.controller.InventoryController">
+            <result name="success">/inventory_insert.jsp</result>
+            <result name="input">/inventory_insert.jsp</result>
+        </action>
+        <action name="updateInventory" method="updateInventory" class="com.dane.controller.InventoryController">
+            <result name="success">/inventory_edit.jsp</result>
+            <result name="input">/inventory_edit.jsp</result>
+        </action>
+        <action name="inventory_insert" class="com.dane.controller.InventoryController" method="addInventory">
+            <result name="success">/inventory_insert.jsp</result>
+        </action>
+        <action name="inventory_edit" class="com.dane.controller.InventoryController" method="editInventory">
+            <result name="success">/inventory_edit.jsp</result>
+        </action>
+        <action name="inventory_delete" class="com.dane.controller.InventoryController" method="deleteInventory">
+            <result name="success">/inventory_list.jsp</result>
+            <result name="input">/inventory_list.jsp</result>
+        </action>
+        <!-- End Inventory -->
+        
+        <!-- Start Order -->
+        <action name="order_list" method="listOrder" class="com.dane.controller.OrderController">
+            <result name="success">/order_list.jsp</result>
+        </action>
+        <action name="insertOrder" method="insertOrder" class="com.dane.controller.OrderController">
+            <result name="success">/order_insert.jsp</result>
+            <result name="input">/order_insert.jsp</result>
+        </action>
+        <action name="updateOrder" method="updateOrder" class="com.dane.controller.OrderController">
+            <result name="success">/order_edit.jsp</result>
+            <result name="input">/order_edit.jsp</result>
+        </action>
+        <action name="order_insert" class="com.dane.controller.OrderController" method="addOrder">
+            <result name="success">/order_insert.jsp</result>
+        </action>
+        <action name="order_edit" class="com.dane.controller.OrderController" method="editOrder">
+            <result name="success">/order_edit.jsp</result>
+        </action>
+        <action name="order_delete" class="com.dane.controller.OrderController" method="deleteOrder">
+            <result name="success">/order_list.jsp</result>
+            <result name="input">/order_list.jsp</result>
+        </action>
+        <!-- End Order -->
+    </package>
+</struts>
